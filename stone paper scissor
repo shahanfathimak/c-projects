@@ -1,0 +1,45 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+int main() {
+ int number,score=0;
+  char option[10],robo[10];
+  int i=1;
+  do{
+ srand(time(0));
+ number=rand()%3;
+  printf("\nround %d,enter the option:",i);
+ scanf("%s",option);
+ if(number==0){
+    strcpy(robo,"stone");
+ }
+ else if(number==1){
+    strcpy(robo,"paper");
+;
+ }
+ else{
+     strcpy(robo,"scissor");
+   
+ }
+ printf("%s",robo);
+
+ if( strcmp(option,robo)==0){
+     printf("\nyo won buddyyyyyy...eeeeee");
+     score++;
+ }
+ else{
+     printf("\nsaaaaad buddy!try again");
+     
+ }
+ i++;
+ 
+}
+while(i<=3);
+printf("\nGAME OVER");
+printf("\nSCORE:%d",score);
+
+
+    return 0;
+}
