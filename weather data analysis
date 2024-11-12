@@ -1,0 +1,51 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+void temperature_data();
+void average();
+void min_max();
+float temperature[7];
+    float sum=0;
+    int day;
+int main(){
+
+    for(int i=0;i<7;i++){
+   
+printf("day:%d\n enter the temperature in celcius\n",i+1);
+scanf("%f",&temperature[i]);
+}
+temperature_data();
+average();
+min_max();
+}
+void temperature_data(){
+ for(int i=0;i<7;i++){
+     printf("%f°C\n",temperature[i]);
+ }
+}
+void average(){
+     for(int i=0;i<7;i++){
+    sum=sum+temperature[i];
+ }
+   printf("average temperature of a week=%f\n",sum/7);
+}
+void min_max(){
+    for(int i=0;i<6;i++){
+        int min=i;
+          for(int j=i+1;j<7;j++){
+              if(temperature[j]<temperature[i]){
+                  min=j;
+              }
+          }
+        if(min!=i){
+            int n=temperature[min];
+            temperature[min]=temperature[i];
+            temperature[i]=n;
+        }
+    }    
+    int i;
+      for(int i=0;i<7;i++){
+      printf("%f ",temperature[i]);    
+      }
+        printf("\nminimum temperature of the weak is %f",temperature[0]);
+        printf("\nmaximum temperature of the weak is %f",temperature[6]);
+    }
